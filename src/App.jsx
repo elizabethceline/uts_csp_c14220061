@@ -62,10 +62,10 @@ export default function App() {
   });
 
   return (
-    <section className="bg-neutral-100 min-h-screen flex flex-col items-center py-16">
+    <section className="bg-neutral-100 min-h-screen flex flex-col items-center py-16 text-black">
       <h1 className="text-2xl font-bold mb-4">To Do List</h1>
       <div className="w-9/12 max-sm:w-[90%] max-sm:text-sm mx-auto p-4 shadow-lg rounded-md bg-white flex gap-4 max-sm:gap-2 mb-8">
-        <div class="w-full h-10 relative flex rounded-md">
+        <div className="w-full h-10 relative flex rounded-md">
           <input
             type="text"
             value={newToDo}

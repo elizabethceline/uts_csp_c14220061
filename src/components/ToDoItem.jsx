@@ -29,12 +29,29 @@ export default function ToDoItem({ toDo, onDelete, onCheck, onEdit }) {
   return (
     <div className="flex max-sm:flex-col max-sm:justify-center sm:items-center gap-4 max-sm:gap-2 my-4 max-sm:my-6">
       <div className="flex-1 flex items-center gap-4 max-sm:gap-2">
-        <input
-          type="checkbox"
-          checked={toDo.checked}
-          onChange={() => onCheck(toDo.id)}
-          className="w-6 h-6 accent-orange-500 cursor-pointer transition duration-200 hover:scale-105 hover:shadow-md"
-        />
+        <label className="relative inline-block w-5 h-5">
+          <input
+            type="checkbox"
+            checked={toDo.checked}
+            onChange={() => onCheck(toDo.id)}
+            className="w-full h-full appearance-none bg-gray-200 checked:bg-orange-400 border border-gray-400 rounded cursor-pointer transition duration-200 hover:scale-105 hover:shadow-md"
+          />
+          {toDo.checked && (
+            <svg
+              className="absolute top-0 left-0 w-full h-full p-1 text-white pointer-events-none"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          )}
+        </label>
 
         {isEdit ? (
           <div class="w-full h-8 relative flex rounded-md">
